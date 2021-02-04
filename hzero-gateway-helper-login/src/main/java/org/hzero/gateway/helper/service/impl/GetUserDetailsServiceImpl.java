@@ -23,6 +23,7 @@ import io.choerodon.core.oauth.CustomUserDetails;
 
 import org.hzero.common.HZeroService;
 import org.hzero.core.base.BaseConstants;
+import org.hzero.core.base.TokenConstants;
 import org.hzero.core.user.UserType;
 import org.hzero.gateway.helper.domain.CustomUserDetailsWithResult;
 import org.hzero.gateway.helper.entity.CheckState;
@@ -64,7 +65,7 @@ public class GetUserDetailsServiceImpl implements GetUserDetailsService {
     @SuppressWarnings("unchecked")
     public CustomUserDetailsWithResult getUserDetails(String token) {
         HttpHeaders headers = new HttpHeaders();
-        headers.set(HttpHeaders.AUTHORIZATION, token);
+        headers.set(TokenConstants.HEADER_AUTH, token);
         HttpEntity<String> entity = new HttpEntity<>("", headers);
         try {
             ResponseEntity<String> responseEntity = restTemplate.exchange(getOauthUserApi(), HttpMethod.GET, entity, String.class);

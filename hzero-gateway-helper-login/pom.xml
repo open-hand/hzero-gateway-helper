@@ -10,12 +10,13 @@
         <version>1.4.0.RELEASE</version>
     </parent>
     <artifactId>hzero-gateway-helper-login</artifactId>
-    <version>1.4.1.RELEASE</version>
+    <version>1.4.2.RELEASE</version>
 
     <dependencies>
         <dependency>
             <groupId>org.hzero.starter</groupId>
             <artifactId>hzero-starter-core</artifactId>
+            <version>1.4.7.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.hzero.starter</groupId>
